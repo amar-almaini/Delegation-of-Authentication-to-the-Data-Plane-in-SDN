@@ -29,7 +29,7 @@ In this case no connection will be possible from 10.0.1.10 to 10.0.3.10
 ![tutorial](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/tutorial.gif)
 
 
-1. Step: Compiling the P4-program
+#### 1. Step: Compiling the P4-program
 
   Depending on the version the commands to compile the code are diffrent:
   *  P4_14
@@ -41,27 +41,27 @@ In this case no connection will be possible from 10.0.1.10 to 10.0.3.10
   p4c-bm2-ss --std p4-16 output.p4_16.p4 -o portknock.p4_16.json
   ````
 
-2. Step: Starting Mininet with the corresponding json-file
+#### 2. Step: Starting Mininet with the corresponding json-file
 
   Depending on your setup the filepath might be different
 
   ```
-sudo python ~/p4/behavioral-model/mininet/1sw_demo.py  --behavioral-exe ~/p4/behavioral-model/targets/simple_switch/simple_switch --json portknock.p4_1X.json --num-hosts 4
+  sudo python ~/p4/behavioral-model/mininet/1sw_demo.py  --behavioral-exe ~/p4/behavioral-model/targets/simple_switch/simple_switch --json portknock.p4_1X.json --num-hosts 4
   ```
   *please replace X with 4 or 6*
 
-3. Step: Adding rules to the switch
+#### 3. Step: Adding rules to the switch
 
   In a new shell, run
   ```
-~/p4/behavioral-model/tools/runtime_CLI.py < rules
-```
+  ~/p4/behavioral-model/tools/runtime_CLI.py < rules
+  ```
 
   After these 3 Steps mininet and the switch are running with basic rules. A quick `pingall` should result in the following output:
 
   ![](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/pingall.png)
 
-4. Step: Start a xterm and knock on the ports
+#### 4. Step: Start a xterm and knock on the ports
 
   In the mininet start your h2 xterm
   ```
