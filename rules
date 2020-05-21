@@ -1,0 +1,32 @@
+table_set_default drop_table _drop
+table_set_default egress.send_frame egress._drop
+table_set_default ingress.forward ingress._drop
+table_set_default ingress.ipv4_lpm ingress._drop
+table_set_default egress.drop_table egress._drop
+table_set_default get_state_table get_state
+table_set_default reset_state_table reset_state
+table_set_default reset_ticket_table reset_ticket
+table_set_default hash_val_table get_hash_val
+table_set_default get_ticket_reg_table get_ticket_reg
+table_set_default grant_ticket_for_not_suspicious_table grant_ticket_for_not_suspicious
+
+table_add send_frame rewrite_mac 1 => 00:aa:bb:00:00:00
+table_add send_frame rewrite_mac 2 => 00:aa:bb:00:00:01
+table_add send_frame rewrite_mac 3 => 00:aa:bb:00:00:02
+table_add send_frame rewrite_mac 4 => 00:aa:bb:00:00:03
+
+table_add forward set_dmac 10.0.0.10 => 00:04:00:00:00:00
+table_add forward set_dmac 10.0.1.10 => 00:04:00:00:00:01
+table_add forward set_dmac 10.0.2.10 => 00:04:00:00:00:02
+table_add forward set_dmac 10.0.3.10 => 00:04:00:00:00:03
+
+table_add ipv4_lpm set_nhop 10.0.0.10/32 => 10.0.0.10 1
+table_add ipv4_lpm set_nhop 10.0.1.10/32 => 10.0.1.10 2
+table_add ipv4_lpm set_nhop 10.0.2.10/32 => 10.0.2.10 3
+table_add ipv4_lpm set_nhop 10.0.3.10/32 => 10.0.3.10 4
+
+table_add update_state_table update_state 5100 0 => 1 0
+table_add update_state_table update_state 5150 1 => 2 0
+table_add update_state_table update_state 5155 2 => 3 1
+
+table_add ticket_deny_table _nop 0 10.0.1.10/32 10.0.3.10 =>
