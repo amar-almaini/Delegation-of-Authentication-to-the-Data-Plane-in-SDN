@@ -1,5 +1,5 @@
 # Portknocking
-***
+
 ## Introduction
 
 This P4 Program is designed to be a simple solution for Portknocking. You´ll find implementations for P4_14 and P4_16.
@@ -26,7 +26,7 @@ table_add ticket_deny_table _nop 0 10.0.1.10/32 10.0.3.10 =>
 In this case no connection will be possible from 10.0.1.10 to 10.0.3.10
 
 ## How to run this program
-!tutorial: img/tutorial.gif "tutorial"
+![tutorial](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/tutorial.gif)
 
 
 1. Step: Compiling the P4-program
@@ -59,7 +59,7 @@ sudo python ~/p4/behavioral-model/mininet/1sw_demo.py  --behavioral-exe ~/p4/beh
 
   After these 3 Steps mininet and the switch are running with basic rules. A quick `pingall` should result in the following output:
 
-  ![][https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/pingall.png]
+  ![](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/pingall.png)
 
 4. Step: Start a xterm and knock on the ports
 
