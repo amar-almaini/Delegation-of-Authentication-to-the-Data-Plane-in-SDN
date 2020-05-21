@@ -59,7 +59,7 @@ sudo python ~/p4/behavioral-model/mininet/1sw_demo.py  --behavioral-exe ~/p4/beh
 
   After these 3 Steps mininet and the switch are running with basic rules. A quick `pingall` should result in the following output:
 
-  !pingall: img/pingall.PNG "pingall"
+  ![][https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/pingall.png]
 
 4. Step: Start a xterm and knock on the ports
 
