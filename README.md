@@ -26,6 +26,7 @@ table_add ticket_deny_table _nop 0 10.0.1.10/32 10.0.3.10 =>
 In this case no connection will be possible from 10.0.1.10 to 10.0.3.10
 
 ## How to run this program
+img/tutorial.gif
 ![tutorial](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/tutorial.gif)
 
 
