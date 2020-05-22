@@ -27,6 +27,7 @@ In this case no connection will be possible from 10.0.1.10 to 10.0.3.10
 
 ## How to run this program
 img/tutorial.gif
+![tutorial](https://github.com/amar-almaini/Port-knocking/blob/master/img/tutorial.gif)
 ![tutorial](https://mygit.th-deg.de/tk12797/portknock/-/raw/master/img/tutorial.gif)
 
 
